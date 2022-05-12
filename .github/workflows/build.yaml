@@ -10,16 +10,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build and Publish All
-      shell: pwsh
       run: |
-        Write-Host "Get-ChildItem ."
-        Get-ChildItem | % { Write-Host $_.FullName }
-        Write-Host "Get-ChildItem .."
-        Get-ChildItem .. | % { Write-Host $_.FullName }
-        Write-Host "Get-ChildItem ../.."
-        Get-ChildItem ../.. | % { Write-Host $_.FullName }
-        Write-Host "Get-ChildItem ../../.."
-        Get-ChildItem ../../.. | % { Write-Host $_.FullName }
-        Write-Host "Get-ChildItem ../../../.."
-        Get-ChildItem ../../../.. | % { Write-Host $_.FullName }
         docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
