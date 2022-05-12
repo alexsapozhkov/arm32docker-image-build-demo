@@ -16,4 +16,5 @@ jobs:
     - name: Build and Publish All
       shell: pwsh
       run: |
+        Get-ChildItem
         docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
