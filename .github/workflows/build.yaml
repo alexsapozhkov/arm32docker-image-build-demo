@@ -16,4 +16,4 @@ jobs:
     - name: Build and Publish All
       shell: pwsh
       run: |
-        docker buildx build --load --platform linux/arm/v7 -f ./DockerFile --tag arm32demo
+        docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
