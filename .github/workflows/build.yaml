@@ -12,9 +12,9 @@ jobs:
     - name: Build and Publish All
       shell: pwsh
       run: |
-        Get-ChildItem
-        Get-ChildItem ..
-        Get-ChildItem ../..
-        Get-ChildItem ../../..
-        Get-ChildItem ../../../..
+        Get-ChildItem | Select FullName
+        Get-ChildItem .. | Select FullName
+        Get-ChildItem ../.. | Select FullName
+        Get-ChildItem ../../.. | Select FullName
+        Get-ChildItem ../../../.. | Select FullName
         docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
