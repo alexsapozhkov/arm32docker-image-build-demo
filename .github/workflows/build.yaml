@@ -11,4 +11,4 @@ jobs:
       - name: echo
         run: |
           brew install docker-machine docker
-          sudo docker –version
+          docker version
