@@ -1,15 +1,8 @@
-name: Build
-
-on: 
-  push:
-    branches: 'main'
-
 jobs:
-  build-docker-macos:
-    runs-on: macos-12
+  my_job:
+    runs-on: [macOS-latest]
     steps:
-    - uses: actions/checkout@v2
-    - run: |
-        brew install docker-machine docker
-        brew services restart docker-machine
-        sudo docker build . --tag arm32demo
+      - name: echo
+        run: |
+          brew install docker-machine docker
+          sudo docker –version
