@@ -11,5 +11,5 @@ jobs:
     - uses: actions/checkout@v2
     - run: brew install docker-machine docker
     - run: brew services restart docker-machine
-    - run: docker version
+    - run: sudo docker version
     - run: sudo docker build . --tag arm32demo
