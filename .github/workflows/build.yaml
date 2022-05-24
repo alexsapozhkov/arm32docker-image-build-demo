@@ -10,9 +10,9 @@ jobs:
     steps:
     - run: |
         echo "Downloading docker"
-        curl https://download.docker.com/mac/stable/Docker.dmg -o tmp/docker.dmg
+        sudo curl https://download.docker.com/mac/stable/Docker.dmg -o docker.dmg
         echo "Mount docker.dmg"
-        sudo hdiutil attach ./tmp/docker.dmg
+        sudo hdiutil attach ./docker.dmg
         echo "Installing docker"
         sudo cp -R /Volumes/Docker/Docker.app /Applications
         echo "Umount docker.dmg"
