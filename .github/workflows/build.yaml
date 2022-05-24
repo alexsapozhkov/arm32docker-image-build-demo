@@ -9,7 +9,4 @@ jobs:
     runs-on: macos-12
     steps:
     - run: |
-        brew install docker-machine docker
-        brew services restart docker-machine
         ls
-        docker build . --tag arm32demo
