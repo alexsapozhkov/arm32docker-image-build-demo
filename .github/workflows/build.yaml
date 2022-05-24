@@ -10,7 +10,7 @@ jobs:
     steps:
     - run: |
         brew install docker-machine docker
-        /usr/local/opt/docker-machine/bin/docker-machine start default
+        brew services restart docker-machine
         sudo docker –-version
         echo "testing without sudo"
         docker –-version
