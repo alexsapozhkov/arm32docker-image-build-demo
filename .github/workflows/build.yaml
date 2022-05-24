@@ -9,13 +9,5 @@ jobs:
     runs-on: macos-12
     steps:
     - run: |
-        echo "Downloading docker"
-        sudo curl https://download.docker.com/mac/stable/Docker.dmg -o docker.dmg
-        echo "Mount docker.dmg"
-        sudo hdiutil attach ./docker.dmg
-        echo "Installing docker"
-        sudo cp -R /Volumes/Docker/Docker.app /Applications
-        echo "Umount docker.dmg"
-        sudo hdiutil detach /Volumes/Docker
-        echo ""
+        brew install docker-machine docker
         docker build . --tag arm32demo
