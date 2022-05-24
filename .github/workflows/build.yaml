@@ -5,11 +5,11 @@ on:
     branches: 'main'
 
 jobs:
-  build-docker-macos:
-    runs-on: macos-12
+  build-docker-linux:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: brew install docker-machine docker
-    - run: brew services restart docker-machine
-    - run: sudo docker version
-    - run: sudo docker build . --tag arm32demo
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
+    - run: |
+        docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
