@@ -10,7 +10,8 @@ jobs:
     steps:
     - run: |
         brew install docker-machine docker
-        sudo docker –v
+        /usr/local/opt/docker-machine/bin/docker-machine start default
+        sudo docker –-version
         echo "testing without sudo"
-        docker –v
+        docker –-version
         docker build . --tag arm32demo
