@@ -5,10 +5,12 @@ on:
     branches: 'main'
 
 jobs:
-  my_job:
-    runs-on: [macOS-latest]
+  build-docker-macos:
+    runs-on: macos-12
     steps:
-      - name: echo
-        run: |
-          brew install docker-machine docker
-          docker version
+    - uses: actions/checkout@v2
+    - run: |
+        brew install docker-machine docker
+        brew services restart docker-machine
+        docker version
+        sudo docker build . --tag arm32demo
