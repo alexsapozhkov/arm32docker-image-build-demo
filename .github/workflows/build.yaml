@@ -8,5 +8,8 @@ jobs:
   build-docker-macos:
     runs-on: macos-12
     steps:
+    - uses: actions/checkout@v2
     - run: |
+        brew install docker-machine docker
         ls
+        docker build . --tag arm32demo
