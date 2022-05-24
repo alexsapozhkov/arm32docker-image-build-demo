@@ -9,8 +9,7 @@ jobs:
     runs-on: macos-12
     steps:
     - uses: actions/checkout@v2
-    - run: |
-        brew install docker-machine docker
-        brew services restart docker-machine
-        docker version
-        sudo docker build . --tag arm32demo
+    - run: brew install docker-machine docker
+    - run: brew services restart docker-machine
+    - run: docker version
+    - run: sudo docker build . --tag arm32demo
