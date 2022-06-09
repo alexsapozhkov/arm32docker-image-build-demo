@@ -15,8 +15,6 @@ jobs:
         platforms: arm
     - run: |
         docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
-
-jobs:
   build-docker-linux:
     runs-on: ubuntu-latest
     steps:
