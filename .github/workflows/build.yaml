@@ -12,6 +12,7 @@ jobs:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
       with:
+        image: multiarch/qemu-user-static
         platforms: arm
     - run: |
         docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
@@ -22,6 +23,7 @@ jobs:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
       with:
+        image: multiarch/qemu-user-static
         platforms: arm
     - name: Build only
       uses: docker/build-push-action@v3
