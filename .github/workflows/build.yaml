@@ -11,5 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
+      with:
+        platforms: arm
     - run: |
         docker buildx build --load --platform linux/arm/v7 . --tag arm32demo
